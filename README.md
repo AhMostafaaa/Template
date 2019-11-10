@@ -1,4 +1,7 @@
  #npm install bootstrap jquery pooper.js
+
+
+
  #npm install ng-circle-progress 
 
 
