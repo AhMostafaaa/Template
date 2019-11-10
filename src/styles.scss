@@ -1,0 +1,280 @@
+/*Global */
+body {
+    direction: ltr;
+}
+$fontFamily : "Google Sans,Roboto, arial, sans-serif";
+$fontWeight : 400 ;
+$mainColor:#24a7f9;
+@mixin foSize($r) {
+    font-size: $r;
+}
+img {
+    border-radius: 50%;
+}
+%hover {
+    transition: 0.3s;
+    &:hover {background-color: #4273e7;}
+} 
+%empty {
+    width: 100%;
+    height: 300px;
+}
+/*Start Navbar */
+nav {
+    background-color: #fff;
+    .navbar-brand {
+        font-family: $fontFamily;
+        @include foSize(23px);
+        font-weight: $fontWeight;
+    }
+    .form-inline i {
+        color:#d7d3d0 ;
+        padding-right: 25px;
+        position: relative;
+            span {
+                position: absolute;
+                top: -10px;
+                right: 20px;
+                padding: 2px 4px;
+                border-radius: 50%;
+                background: $mainColor;
+                color: #fff;
+            }
+    }
+    .form-inline p {
+        margin: 10px 0;
+        font-weight:  $fontWeight + 200;
+            i {padding-right: 10px;}
+    }
+    .form-inline img {
+        margin:0 20px 0 0px;
+    }
+    .form-inline a {
+        padding:5px 30px ;
+        color: #fff;
+        text-decoration: none;
+        background-color: $mainColor;
+        border: 2px;
+        border-radius: 50px;
+        i {
+            color: #fff;
+            padding-right: 10px;
+            }
+        @extend %hover ;
+    }
+}
+/* End NavBar */
+/*Start About */
+.about-header {
+    width: 100%;
+    height: 270px;
+    background-image: linear-gradient(to bottom right, #2ea0d2, #3547ab);;
+    color: #fff ;
+    h5 {
+       font-weight: $fontWeight + 200;
+    }
+    a {
+        padding:5px 30px ;
+        text-decoration: none;
+        background-color: $mainColor;
+        border: 2px;
+        border-radius: 50px;
+        color: #fff;
+        @extend %hover ;
+    }
+}
+.about {
+    background-color:#f8f7fc;
+    padding: 13px 25px 1px 36px;
+    .about-icons {
+        i:first-of-type {
+            padding-right: 53px;
+        }
+        p {font-weight: $fontWeight + 200;
+        }
+        p:first-of-type {
+            padding-right: 25px;
+        }
+    }
+    .about-social {
+        i {
+            background-color: $mainColor;
+            border-radius: 50%;
+            color: #fff;
+            padding:10px 10px;
+            margin-right: 5px;
+            cursor: pointer;
+            @extend %hover;
+        }
+    }
+}
+/*End About */
+/*Start Skills */
+.skills {
+    background-color: #326fbc ;
+    .skills-nav {
+        .nav-item {
+            padding: 10px 50px 10px 0;
+           .nav-link {
+                color: #b9d0ff;
+                font-weight: $fontWeight + 200;
+                i {
+                    padding-right: 10px;
+                    color: $mainColor;
+                }&:hover {
+                    color: #fff;
+                }&:hover i {
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .skills-content {
+        background-color: #f2f3f8;
+        box-shadow: 0 0 8px 0 #888888;
+        width: 100%;
+        .content {
+          padding: 30px 30px 15px 30px;
+          .content-head {
+           color:#67686c;
+           font-weight: $fontWeight +200;
+           }
+    .content-skill {
+         background-image: linear-gradient(to bottom right, #2eacf7, #4cc5d6);
+         border-radius: 7px;
+         .skill-avg {
+             margin: 14px ;
+             @include foSize(28px);
+             color: #fff;
+         }
+         .skill-text{
+           p {
+               color: #fff;
+               font-weight: $fontWeight +200;
+              @include foSize(15px)
+           }
+           .skill-text-1 {
+               i {
+                 background-color: #fff;
+                 color: $mainColor;
+                 border-radius: 50%;
+                 padding: 5px;
+                 }
+           }
+           .skill-text-2 {
+             i {
+                 background-color: red;
+                 color: #fff;
+                 border-radius: 50%;
+                 padding: 5px;
+             }
+         }
+         }
+    }
+   }
+     }
+    .empty-div {
+         width: 100%;
+         height: 50px;
+         background-color:#f8f7fc ;
+     }
+}
+/*End Skills */
+.empty-div1 {
+    @extend %empty;
+    background-image: linear-gradient(  #326fbc , #35459d );
+}
+.empty-div2 {
+    @extend %empty;
+    background-color: #f8f7fc;
+}
+/* Start Footer */
+.footer {
+    ul{
+        margin-left: 33px;
+        .nav-item {
+            .nav-link {
+                color: #bdbdbd;
+                font-family:$fontFamily ;
+                font-size: 18px;
+                &:hover {
+                    color: $mainColor
+                }
+            }
+        }
+    }
+}
+/* End Footer */
+/* media Query */
+@media screen and (min-width: 768px) and  (max-width: 1024px) {
+    /*Start About */
+    .about {
+        text-align: center;
+    }
+    /*End About */
+    /* Start Skills */
+    .skills {
+        .skills-nav {
+            .nav-item {
+                padding-right: 16px;
+                padding-left: 10px;
+            }
+        }
+        .skills-content {
+            .content {
+                .content-skill {
+                  .skill-avg {
+                      margin-right: 0px;
+                      margin-left: 0px;
+                  }
+                    .skill-text {
+                        p {
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /* End Skills */
+}
+@media only screen and (max-width: 600px) {
+  .skills {
+      .skills-nav {
+          .nav-item {
+              padding: 0px;
+              font-size: 10px;
+              margin-left: 2px;
+              .nav-link {
+                  padding: 10px 3px;
+              }
+          }
+      }
+      .skills-content {
+          .content {
+              .content-skill {
+                .skill-avg {
+                    margin-right: 2px;
+                    margin-left: 2px;
+                }
+                  .skill-text {
+                      p {
+                          font-size: 13px;
+                      }
+                  }
+              }
+          }
+      }
+  }
+  .footer {
+      ul {
+          margin-left: 10px;
+          .nav-item {
+              .nav-link {
+                  padding: 7px;
+                  font-size: 15px;
+              }
+          }
+      }
+  }
+} 
